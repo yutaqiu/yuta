@@ -14,7 +14,7 @@
                                 @csrf
 
                                 <div class="form-group">
-                                    <label for="name" class="form-label">用户名</label>
+                                    <label for="name" class="form-label">昵称</label>
 
                                     <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
 
