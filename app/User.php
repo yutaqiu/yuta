@@ -35,7 +35,7 @@ class User extends Authenticatable
 
         $img = Image::canvas(400, 400, '#'.$bg);
         $img->text($char, 215, 200, function($font){
-            $font->file(storage_path('app/fonts/simyou.ttf'));
+            $font->file(resource_path('assets/fonts/simhei.ttf'));
             $font->size(250);
             $font->valign('middle');
             $font->align('center');
