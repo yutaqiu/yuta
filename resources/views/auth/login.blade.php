@@ -8,57 +8,51 @@
                 <div class="card-header">登录</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+                    <div class="row">
+                        <div class="col-md-6 mx-auto">
+                            <form method="POST" action="{{ route('login') }}">
+                                @csrf
 
-                        <div class="form-group row">
-                            <label for="email" class="form-label">邮箱</label>
+                                <div class="form-group">
+                                    <label for="email" class="form-label">邮箱</label>
 
-                            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
-                            @if ($errors->has('email'))
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                            @endif
-                        </div>
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback">{{ $errors->first('email') }}</span>
+                                    @endif
+                                </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                                <div class="form-group">
+                                    <label for="password" class="form-label">
+                                        密码
+                                        <a class="small float-right" href="{{ route('password.request') }}" tabindex="-1">
+                                            忘记密码？
+                                        </a>
+                                    </label>
 
-                            <div class="col-md-8">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required name="password">
 
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                                    @if ($errors->has('password'))
+                                        <span class="invalid-feedback">{{ $errors->first('password') }}</span>
+                                    @endif
+                                </div>
 
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Remember Me') }}
+                                <div class="form-group">
+                                    <label class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                                        <span class="custom-control-label">记住我</span>
                                     </label>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">
+                                        登 录
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>

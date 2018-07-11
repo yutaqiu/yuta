@@ -1,7 +1,7 @@
 <div class="header py-4">
     <div class="container">
         <div class="d-flex">
-            <a class="header-brand" href="{{ url('/') }}">
+            <a class="header-brand" href="{{ route('home') }}">
                 <img src="{{ asset('images/logo.png') }}" class="header-brand-img" alt="yuta logo">
             </a>
             <div class="d-flex order-lg-2 ml-auto">
